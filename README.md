@@ -166,3 +166,8 @@ En caso de error de validación, el servidor responde HTTP 400 con un mensaje en
 ## Consideraciones de seguridad y alcance
 
 Este proyecto está preparado para **demostración académica, no para manejar datos privados en producción**. No incluye registro/inicio de sesión ni autorización: cualquier visitante que conozca la URL puede agregar, modificar o borrar registros. Usa únicamente información ficticia al publicarlo; antes de usarlo con usuarios reales, añade autenticación, autorización, limitación de solicitudes, auditoría y separación por usuario. La meta mensual se guarda en el navegador mediante `localStorage`, mientras que las lecturas se guardan en MongoDB.
+
+
+## Evidencias para la actividad académica
+
+Consultar [Cumplimiento de los cuatro requisitos](docs/CUMPLIMIENTO_ACTIVIDAD.md): problema, frameworks, arquitectura hexagonal, SOLID, Clean Code, refactorización y pruebas.
