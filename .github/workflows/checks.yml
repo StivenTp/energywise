@@ -1,0 +1,36 @@
+name: Revisar EnergyWise
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+jobs:
+  backend:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Instalar dependencias
+        working-directory: backend
+        run: npm install --no-audit --no-fund
+      - name: Probar reglas de negocio
+        working-directory: backend
+        run: npm test
+      - name: Compilar backend
+        working-directory: backend
+        run: npm run build
+  frontend:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Instalar dependencias
+        working-directory: frontend
+        run: npm install --no-audit --no-fund
+      - name: Compilar frontend
+        working-directory: frontend
+        run: npm run build

@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: energywise-web
+    runtime: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    healthCheckPath: /api/health
+    envVars:
+      - key: MONGODB_URI
+        sync: false
+      - key: MONGO_DB_NAME
+        value: energywise
+      - key: NODE_ENV
+        value: production
